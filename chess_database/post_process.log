@@ -1,0 +1,95 @@
+Starting PostgreSQL...
+Starting PostgreSQL setup...
+Found PostgreSQL version: 16
+Initializing PostgreSQL...
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+initdb: warning: enabling "trust" authentication for local connections
+initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+
+Success. You can now start the database server using:
+
+    /usr/lib/postgresql/16/bin/pg_ctl -D /var/lib/postgresql/data -l logfile start
+
+Starting PostgreSQL server...
+Waiting for PostgreSQL to start...
+2025-06-30 15:22:25.537 UTC [280] LOG:  starting PostgreSQL 16.9 (Ubuntu 16.9-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, 64-bit
+2025-06-30 15:22:25.541 UTC [280] LOG:  listening on IPv6 address "::1", port 5000
+2025-06-30 15:22:25.542 UTC [280] LOG:  listening on IPv4 address "127.0.0.1", port 5000
+2025-06-30 15:22:25.572 UTC [280] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5000"
+2025-06-30 15:22:25.616 UTC [283] LOG:  database system was shut down at 2025-06-30 15:22:15 UTC
+2025-06-30 15:22:25.631 UTC [280] LOG:  database system is ready to accept connections
+PostgreSQL is ready!
+Setting up database and user...
+DO
+GRANT
+You are now connected to database "myapp" as user "postgres".
+GRANT
+GRANT
+ALTER DEFAULT PRIVILEGES
+ALTER DEFAULT PRIVILEGES
+ALTER DEFAULT PRIVILEGES
+ALTER DEFAULT PRIVILEGES
+GRANT
+GRANT
+GRANT
+GRANT
+GRANT
+GRANT
+                                       List of schemas
+  Name  |       Owner       |           Access privileges            |      Description       
+--------+-------------------+----------------------------------------+------------------------
+ public | pg_database_owner | pg_database_owner=UC/pg_database_owner+| standard public schema
+        |                   | =U/pg_database_owner                  +| 
+        |                   | appuser=UC/pg_database_owner           | 
+(1 row)
+
+Connection string saved to db_connection.txt
+PostgreSQL setup complete!
+Database: myapp
+User: appuser
+Port: 5000
+
+Environment variables saved to db_visualizer/postgres.env
+To use with Node.js viewer, run: source db_visualizer/postgres.env
+To connect to the database, use one of the following commands:
+psql -h localhost -U appuser -d myapp -p 5000
+psql postgresql://appuser:dbuser123@localhost:5000/myapp
+npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated gauge@4.0.4: This package is no longer supported.
+
+added 257 packages, and audited 258 packages in 10s
+
+30 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.4.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+npm notice To update run: npm install -g npm@11.4.2
+npm notice
+PostgreSQL is starting on port 5000...
