@@ -1,0 +1,103 @@
+Starting PostgreSQL setup...
+Found PostgreSQL version: 16
+Initializing PostgreSQL...
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+initdb: warning: enabling "trust" authentication for local connections
+initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+
+Success. You can now start the database server using:
+
+    /usr/lib/postgresql/16/bin/pg_ctl -D /var/lib/postgresql/data -l logfile start
+
+Starting PostgreSQL server...
+Waiting for PostgreSQL to start...
+2025-07-01 06:24:21.401 UTC [866] LOG:  starting PostgreSQL 16.9 (Ubuntu 16.9-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, 64-bit
+2025-07-01 06:24:21.402 UTC [866] LOG:  listening on IPv6 address "::1", port 5000
+2025-07-01 06:24:21.402 UTC [866] LOG:  listening on IPv4 address "127.0.0.1", port 5000
+2025-07-01 06:24:21.439 UTC [866] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5000"
+2025-07-01 06:24:21.464 UTC [869] LOG:  database system was shut down at 2025-07-01 06:24:17 UTC
+2025-07-01 06:24:21.481 UTC [866] LOG:  database system is ready to accept connections
+PostgreSQL is ready!
+Setting up database and user...
+DO
+GRANT
+You are now connected to database "myapp" as user "postgres".
+GRANT
+GRANT
+ALTER DEFAULT PRIVILEGES
+ALTER DEFAULT PRIVILEGES
+ALTER DEFAULT PRIVILEGES
+ALTER DEFAULT PRIVILEGES
+GRANT
+GRANT
+GRANT
+GRANT
+GRANT
+GRANT
+                                       List of schemas
+  Name  |       Owner       |           Access privileges            |      Description       
+--------+-------------------+----------------------------------------+------------------------
+ public | pg_database_owner | pg_database_owner=UC/pg_database_owner+| standard public schema
+        |                   | =U/pg_database_owner                  +| 
+        |                   | appuser=UC/pg_database_owner           | 
+(1 row)
+
+Connection string saved to db_connection.txt
+PostgreSQL setup complete!
+Database: myapp
+User: appuser
+Port: 5000
+
+Environment variables saved to db_visualizer/postgres.env
+To use with Node.js viewer, run: source db_visualizer/postgres.env
+To connect to the database, use one of the following commands:
+psql -h localhost -U appuser -d myapp -p 5000
+psql postgresql://appuser:dbuser123@localhost:5000/myapp
+
+> simple-db-viewer@1.0.0 start
+> node server.js --host 0.0.0.0
+
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module 'express'
+Require stack:
+- /home/kavia/workspace/code-generation/chessmate-95936-ae4fd2cd/chess_database/db_visualizer/server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/home/kavia/workspace/code-generation/chessmate-95936-ae4fd2cd/chess_database/db_visualizer/server.js:1:17)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/kavia/workspace/code-generation/chessmate-95936-ae4fd2cd/chess_database/db_visualizer/server.js'
+  ]
+}
+
+Node.js v18.20.6
+2025-07-01 06:24:37.981 UTC [1006] LOG:  invalid length of startup packet
